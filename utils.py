@@ -2,6 +2,7 @@ from langchain_openai import AzureChatOpenAI
 from langchain.schema.output_parser import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
 import os
+import pytest
 
 
 os.environ["AZURE_OPENAI_API_KEY"] = "8ed4711d892f43ea9e5888928d5dbd20"

@@ -36,26 +36,5 @@ jobs:
 
       - name: Run tests
         run: |
-            pytest *-tests.py --junitxml=junit/test-results.xml --cov=. --cov-report=xml
+            pytest *-tests.py
         working-directory: ${{ github.workspace }}
-
-      - name: Code Coverage Summary Report
-        uses: irongut/CodeCoverageSummary@v1.3.0
-        with:
-          filename: coverage.xml
-          badge: true
-          fail_below_min: true
-          format: markdown
-          hide_branch_rate: false
-          hide_complexity: true
-          indicators: true
-          output: both
-
-      - name: Archive test and code coverage results
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-and-coverage-results
-          path: |
-            **/test-results-*.xml
-            coverage.xml
-            code-coverage-results.md

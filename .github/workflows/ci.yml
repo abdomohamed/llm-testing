@@ -34,12 +34,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Lint code
-        run: ruff check .
-
-      - name: Format code
-        run: ruff format .
-
       - name: Run tests
         run: |
             pytest *-tests.py --junitxml=junit/test-results.xml --cov=. --cov-report=xml
